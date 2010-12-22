@@ -510,7 +510,7 @@ VALUE #{method}_equals(VALUE value) {
     # Loads the generated code back into ruby
 
     def load
-      require "#{so_name}" or raise LoadError, "require on #{so_name} failed"
+      Kernel.require "#{so_name}" or raise LoadError, "require on #{so_name} failed"
     end
 
     ##
@@ -791,7 +791,7 @@ class Module
   # options is a hash that allows you to pass extra data to your
   # builder.  The only key that is guaranteed to exist is :testing.
 
-  attr_reader :options
+  #attr_reader :options
 
   ##
   # Extends the Module class to have an inline method. The default
